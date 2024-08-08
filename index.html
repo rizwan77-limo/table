@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxiwala Subscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .offer {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .offer:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .offer-selected {
+            border-color: #4CAF50;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Taxiwala Subscription</h1>
+        <div class="offers">
+            <div class="offer" id="monthly-offer">
+                <h2 class="price">40 AED/month</h2>
+                <p class="description">Get access to our premium features for a month</p>
+                <button class="btn" id="monthly-btn">Subscribe</button>
+            </div>
+            <div class="offer" id="half-yearly-offer">
+                <h2 class="price">200 AED/half-year</h2>
+                <p class="description">Get access to our premium features for 6 months</p>
+                <a href="index.php">
+                <button class="btn" id="half-yearly-btn">Subscribe</button> </a> 
+            </div>
+            <div class="offer" id="yearly-offer">
+                <h2 class="price">400 AED/year</h2>
+                <p class="description">Get access to our premium features for a year</p>
+                <button class="btn" id="yearly-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const offers = document.querySelectorAll('.offer');
+        offers.forEach((offer) => {
+            offer.addEventListener('click', () => {
+                offers.forEach((o) => o.classList.remove('offer-selected'));
+                offer.classList.add('offer-selected');
+            });
+        });
+    </script>
+</body>
+</html>
